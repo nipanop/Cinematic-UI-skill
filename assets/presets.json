@@ -1,0 +1,87 @@
+{
+  "schema": "cinematic-ui-vfx/design-presets-v1",
+  "basis": "Proposed tunable choreography inspired by supplied videos, not recovered source values or a drop-in runtime.",
+  "units": "seconds; spatial values relative to panel width unless viewportWidth is named",
+  "themes": {
+    "electric": {"body": "#A147F5", "hot": "#F4DCFF", "shadow": "#32105C", "motifs": ["swirl", "jaggedArcs", "sparks"]},
+    "frost": {"body": "#45BFFF", "hot": "#E0FAFF", "shadow": "#123B65", "motifs": ["crystalRing", "shards", "scanFlare"]},
+    "gold": {"body": "#F9BB36", "hot": "#FFF2C4", "shadow": "#784018", "motifs": ["sunRing", "starGlints", "goldDust"]},
+    "woodland": {"body": "#94D94F", "hot": "#FFF0BB", "shadow": "#2D4A24", "motifs": ["leafSwirl", "warmRing", "acorns"]}
+  },
+  "presets": [
+    {
+      "name": "spectacular-open",
+      "duration": 1.35,
+      "purpose": "Occasional dramatic menu arrival; retarget early on interruption.",
+      "beats": [
+        {"kind": "focusTint", "start": 0.0, "duration": 0.3, "purpose": "Immediate focus and background contrast"},
+        {"kind": "swirlCharge", "start": 0.0, "duration": 0.52, "diameter": [0.18, 0.9], "rotationDegrees": [0, 190], "purpose": "Anticipation into the reveal hit"},
+        {"kind": "horizontalFlare", "start": 0.48, "duration": 0.28, "viewportWidth": 1.0, "purpose": "Sharp hit with coloured halo"},
+        {"kind": "travellingRing", "start": 0.49, "duration": 0.48, "diameter": [0.2, 1.3], "purpose": "Continue motion behind arriving shell"},
+        {"kind": "shellReveal", "start": 0.52, "duration": 0.34, "scale": [0.55, 1.03, 1.0], "rotationDegrees": [-4, 0], "purpose": "Panel takes focal ownership"},
+        {"kind": "headerDecor", "start": 0.76, "duration": 0.24, "purpose": "Title and motif assemble"},
+        {"kind": "cardStagger", "start": 0.9, "duration": 0.42, "itemScale": [0.7, 1.04, 1.0], "totalStagger": 0.18, "purpose": "Animate visible initial batch; actions stay responsive"},
+        {"kind": "burstTail", "start": 0.52, "duration": 0.7, "count": 12, "purpose": "Small coloured aftermath with clean decay"},
+        {"kind": "quietHold", "start": 1.3, "duration": 0.05, "purpose": "Only optional restrained perimeter accents persist"}
+      ]
+    },
+    {
+      "name": "fast-open",
+      "duration": 0.5,
+      "purpose": "Frequently used utility screens retain character with shorter anticipation.",
+      "beats": [
+        {"kind": "focusTint", "start": 0.0, "duration": 0.12},
+        {"kind": "localizedGlint", "start": 0.04, "duration": 0.14},
+        {"kind": "shellReveal", "start": 0.04, "duration": 0.24, "scale": [0.88, 1.02, 1.0]},
+        {"kind": "travellingRing", "start": 0.06, "duration": 0.28, "diameter": [0.25, 1.05]},
+        {"kind": "cardStagger", "start": 0.2, "duration": 0.3, "itemScale": [0.85, 1.02, 1.0], "totalStagger": 0.12}
+      ]
+    },
+    {
+      "name": "spectacular-close",
+      "duration": 0.65,
+      "purpose": "An authored faster exit; cancel outstanding arrival work first.",
+      "beats": [
+        {"kind": "contentRetract", "start": 0.0, "duration": 0.18, "totalStagger": 0.08},
+        {"kind": "shellCollapse", "start": 0.1, "duration": 0.3, "scale": [1.0, 0.55]},
+        {"kind": "localizedGlint", "start": 0.3, "duration": 0.15},
+        {"kind": "releaseRing", "start": 0.26, "duration": 0.3, "diameter": [0.4, 1.2]},
+        {"kind": "restoreFocus", "start": 0.35, "duration": 0.3}
+      ]
+    },
+    {
+      "name": "scan-reward",
+      "duration": 2.55,
+      "holdMode": "until-continue-after-timeline",
+      "purpose": "Deliberate confirmed reward reveal; leave a readable result awaiting acknowledgement.",
+      "beats": [
+        {"kind": "dimParent", "start": 0.0, "duration": 0.18},
+        {"kind": "foregroundCard", "start": 0.0, "duration": 0.28, "scale": [0.9, 1.0]},
+        {"kind": "scanWipe", "start": 0.28, "duration": 1.35, "progress": [0.0, 1.0], "purpose": "Bright art unmasked upward; artwork is not resized"},
+        {"kind": "revealSpecks", "start": 0.28, "duration": 1.6, "count": 16},
+        {"kind": "localizedPayoff", "start": 1.7, "duration": 0.18},
+        {"kind": "resultLabels", "start": 1.78, "duration": 0.25},
+        {"kind": "readableHold", "start": 2.03, "duration": 0.52, "purpose": "Continue action then holds beyond decorative timeline"}
+      ]
+    },
+    {
+      "name": "reduced-open",
+      "duration": 0.18,
+      "purpose": "Fade/colour confirmation without large-scale travel, particles or flash.",
+      "beats": [
+        {"kind": "focusTint", "start": 0.0, "duration": 0.12},
+        {"kind": "panelFade", "start": 0.0, "duration": 0.18}
+      ]
+    },
+    {
+      "name": "reduced-reward",
+      "duration": 0.25,
+      "holdMode": "until-continue-after-timeline",
+      "purpose": "Static full artwork and readable result; no scan, burst, shake or white-out.",
+      "beats": [
+        {"kind": "dimParent", "start": 0.0, "duration": 0.12},
+        {"kind": "resultFade", "start": 0.0, "duration": 0.25}
+      ]
+    }
+  ]
+}

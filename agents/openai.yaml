@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cinematic UI VFX"
+  short_description: "Spectacular screen openings and animated reward reveals"
+  default_prompt: "Use $cinematic-ui-vfx to give my Roblox screen an awesome animated opening, layered VFX and matching exit."
